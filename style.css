@@ -1,22 +1,35 @@
 /* CSS style reset */
 * {
-	padding: 0;
 	margin: 0;
+	padding: 0;
+}
+
+article {
+	border: 1px black solid;
+	margin-block: 0.5rem;
+	padding: 0.5rem;
+	width: 50%;
+
+	.dark-mode & {
+		border-color: white;
+	}
+}
+
+h2 {
+	margin-block: 0.3rem;
 }
 
 main {
 	padding: 1rem 2rem;
 }
 
-h1 {
-	padding-block: 2rem;
-}
-
-h2 {
-	padding-block: 0.5rem;
+path {
+	stroke-width: 0.2rem;
+	stroke: black;
+	fill: none;
 }
 
 .dark-mode {
-	color: white;
 	background-color: black;
+	color: white;
 }
