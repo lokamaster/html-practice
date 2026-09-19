@@ -1,50 +1,68 @@
 /* CSS style reset */
 * {
-	margin: 0;
-	padding: 0;
+  margin: 0;
+  padding: 0;
 }
 
 article {
-	border: 1px black solid;
-	margin-block: 0.5rem;
-	padding: 0.5rem;
-	width: 50%;
+  align-items: center;
+  border: 0.2rem black solid;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-block: 0.5rem;
+  max-width: 40vw;
+  padding: 0.5rem;
+  transition: transform 0.15s ease-out;
+  width: 100%;
 
-	.dark-mode & {
-		border-color: white;
-	}
+  .dark-mode & {
+    border-color: white;
+  }
+
+  &:hover {
+    transform: scale(1.05);
+  }
 }
 
-h2 {
-	margin-block: 0.3rem;
+input {
+  accent-color: black;
+
+  .dark-mode & {
+    accent-color: white;
+   }
 }
 
 main {
-	padding: 1rem 2rem;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: 1rem 2rem;
 }
 
 path {
-	fill: none;
-	stroke: black;
-	stroke-width: 0.2rem;
+  fill: none;
+  stroke: black;
+  stroke-width: 0.2rem;
 
-	.dark-mode & {
-		stroke: white;
-	}
+  .dark-mode & {
+    stroke: white;
+  }
 }
 
 circle {
-	fill: white;
-	stroke: black;
+  fill: white;
+  stroke: black;
 
-	.dark-mode & {
-		fill: black;
-		stroke: white;
-		
-	}
+  .dark-mode & {
+    fill: black;
+    stroke: white;
+    
+  }
 }
 
 .dark-mode {
-	background-color: black;
-	color: white;
+  background-color: black;
+  color: white;
 }
