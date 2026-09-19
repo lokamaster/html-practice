@@ -5,9 +5,14 @@
   padding: 0;
 }
 
+:root {
+  --accent-color: white;
+  --text-color: black;
+}
+
 article {
   align-items: center;
-  border: 0.2rem black solid;
+  border: 0.2rem var(--text-color) solid;
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
@@ -17,16 +22,14 @@ article {
   transition: transform 0.15s ease-out;
   width: 100%;
 
-  .dark-mode & {
-    border-color: white;
-  }
-
   &:hover {
     transform: scale(1.05);
   }
 }
 
 body {
+  background-color: var(--accent-color);
+  color: var(--text-color);
   display: flex;
   flex-direction: column;
   min-height: 100dvh;
@@ -34,13 +37,8 @@ body {
 }
 
 circle {
-  fill: white;
-  stroke: black;
-
-  .dark-mode & {
-    fill: black;
-    stroke: white;
-  }
+  fill: var(--accent-color);
+  stroke: var(--text-color);
 }
 
 footer {
@@ -52,11 +50,7 @@ header {
 }
 
 input {
-  accent-color: black;
-
-  .dark-mode & {
-    accent-color: white;
-   }
+  accent-color: var(--text-color);
 }
 
 main {
@@ -70,25 +64,16 @@ main {
 
 path {
   fill: none;
-  stroke: black;
+  stroke: var(--text-color);
   stroke-width: 0.2rem;
-
-  .dark-mode & {
-    stroke: white;
-  }
 }
 
 .dark-mode {
-  background-color: black;
-  color: white;
+  --accent-color: black;
+  --text-color: white;
 }
 
 .title-style {
-  background: black;
-  color: white;
-  
-  .dark-mode & {
-    background: white;
-    color: black;
-  }
+  background: var(--text-color);
+  color: var(--accent-color);
 }
