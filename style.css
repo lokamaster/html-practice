@@ -24,9 +24,24 @@ main {
 }
 
 path {
-	stroke-width: 0.2rem;
-	stroke: black;
 	fill: none;
+	stroke: black;
+	stroke-width: 0.2rem;
+
+	.dark-mode & {
+		stroke: white;
+	}
+}
+
+circle {
+	fill: white;
+	stroke: black;
+
+	.dark-mode & {
+		fill: black;
+		stroke: white;
+		
+	}
 }
 
 .dark-mode {
