@@ -1,5 +1,6 @@
 /* CSS style reset */
 * {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
@@ -25,6 +26,31 @@ article {
   }
 }
 
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100dvh;
+  padding: 1rem;
+}
+
+circle {
+  fill: white;
+  stroke: black;
+
+  .dark-mode & {
+    fill: black;
+    stroke: white;
+  }
+}
+
+footer {
+  text-align: center;
+}
+
+header {
+  text-align: center;
+}
+
 input {
   accent-color: black;
 
@@ -36,6 +62,7 @@ input {
 main {
   align-items: center;
   display: flex;
+  flex: 1;
   flex-direction: column;
   gap: 1.5rem;
   padding: 1rem 2rem;
@@ -51,18 +78,17 @@ path {
   }
 }
 
-circle {
-  fill: white;
-  stroke: black;
-
-  .dark-mode & {
-    fill: black;
-    stroke: white;
-    
-  }
-}
-
 .dark-mode {
   background-color: black;
   color: white;
+}
+
+.title-style {
+  background: black;
+  color: white;
+  
+  .dark-mode & {
+    background: white;
+    color: black;
+  }
 }
