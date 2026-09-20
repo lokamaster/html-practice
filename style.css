@@ -6,13 +6,23 @@
 }
 
 :root {
-  --accent-color: white;
-  --text-color: black;
+  --palette-color-one: #c9cba3;
+  --palette-color-two: #ffe1a8;
+  --palette-color-three: #e26d5c;
+  --palette-color-four: #723d46;
+  --palette-color-five: #472d30;
+
+  --accent-color: var(--palette-color-one);
+  --accent-color-two: var(--palette-color-two);
+  --accent-color-three: var(--palette-color-three);
+  --accent-color-four: var(--palette-color-four);
+  --text-color: var(--palette-color-five);
 }
 
 article {
   align-items: center;
-  border: 0.2rem var(--text-color) solid;
+  background-color: var(--accent-color-two);
+  border: 0.2rem var(--accent-color-three) solid;
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
@@ -69,8 +79,11 @@ path {
 }
 
 .dark-mode {
-  --accent-color: black;
-  --text-color: white;
+  --accent-color: var(--palette-color-five);
+  --accent-color-two: var(--palette-color-four);
+  --accent-color-three: var(--palette-color-three);
+  --accet-color-four: var(--palette-color-two);
+  --text-color: var(--palette-color-one);
 }
 
 .title-style {
