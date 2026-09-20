@@ -1,8 +1,10 @@
+/* Dark mode logic. */
 const darkModeButton = document.getElementById("dark-mode-button");
 darkModeButton.addEventListener('click', () => {
   document.documentElement.classList.toggle("dark-mode");
 });
 
+/* Slider logic. */
 const sliderOne = document.getElementById("slider-line-1");
 sliderOne.addEventListener("input", (e) => {
   const max = sliderOne.max;
@@ -21,7 +23,8 @@ sliderOne.addEventListener("input", (e) => {
   circle.setAttribute("cy", newPoint.y);
 });
 
-function isPrime(n) {
+/* Primality check logic. */
+const isPrime = n => {
   if (n < 4) {
     return n > 1;
   } else if (n % 2 == 0 || n % 3 == 0) {
@@ -45,4 +48,32 @@ primeButton.addEventListener("click", () => {
   const n = inputPrime.value;
   const prime = isPrime(n) ? " is " : " is not ";
   primeOutput.textContent = n + prime + "prime";
+});
+
+/* Stopwatch logic. */
+const stopwatchTimer = document.getElementById("stopwatch-timer");
+const stopwatchButton = document.getElementById("stopwatch-button");
+
+let intervalId = null;
+let running = false;
+let seconds = 0;
+
+const start = () => {
+  stopwatchButton.textContent = "Stop";
+  stopwatchTimer.textContent = seconds;
+  intervalId = setInterval(() => {
+    seconds += 1;
+    stopwatchTimer.textContent = seconds;
+  }, 1000);
+}
+
+const stop = () => {
+  stopwatchButton.textContent = "Start";
+  clearInterval(intervalId);
+  seconds = 0;
+}
+
+stopwatchButton.addEventListener("click", () => {
+  running ? stop() : start();
+  running = !running;
 });
