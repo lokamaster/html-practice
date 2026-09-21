@@ -58,12 +58,18 @@ let intervalId = null;
 let running = false;
 let seconds = 0;
 
+const formatTime =  (s) => {
+  const min = String(Math.floor(s / 60)).padStart(2, '0');
+  const sec = String(s % 60).padStart(2, '0');
+  return `${min}:${sec}`
+}
+
 const start = () => {
   stopwatchButton.textContent = "Stop";
-  stopwatchTimer.textContent = seconds;
+  stopwatchTimer.textContent = "00:00";
   intervalId = setInterval(() => {
     seconds += 1;
-    stopwatchTimer.textContent = seconds;
+    stopwatchTimer.textContent = formatTime(seconds);
   }, 1000);
 }
 

@@ -27,7 +27,7 @@ article {
   flex-direction: column;
   gap: 0.5rem;
   margin-block: 0.5rem;
-  max-width: 40vw;
+  max-width: 30vw;
   padding: 0.5rem;
   transition: transform 0.15s ease-out;
   width: 100%;
@@ -45,6 +45,15 @@ body {
   min-height: 100dvh;
   padding: 1rem;
 }
+
+button {
+  background-color: var(--accent-color-two);
+  border-color: var(--accent-color-three);
+  border-radius: 0.5rem;
+  color: var(--text-color);
+  font-size: 1.3rem;
+  padding: 0.2rem;
+} 
 
 circle {
   fill: var(--accent-color);
@@ -72,6 +81,14 @@ main {
   padding: 1rem 2rem;
 }
 
+output {
+  font-size: 1.5rem;
+}
+
+p {
+  font-size: 1.5rem;
+}
+
 path {
   fill: none;
   stroke: var(--text-color);
@@ -82,7 +99,7 @@ path {
   --accent-color: var(--palette-color-five);
   --accent-color-two: var(--palette-color-four);
   --accent-color-three: var(--palette-color-three);
-  --accet-color-four: var(--palette-color-two);
+  --accent-color-four: var(--palette-color-two);
   --text-color: var(--palette-color-one);
 }
 
