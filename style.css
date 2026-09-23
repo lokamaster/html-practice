@@ -27,7 +27,7 @@ article {
   flex-direction: column;
   gap: 0.5rem;
   margin-block: 0.5rem;
-  max-width: 30vw;
+  max-width: 35dvw;
   padding: 0.5rem;
   transition: transform 0.15s ease-out;
   width: 100%;
@@ -66,6 +66,12 @@ footer {
 
 header {
   text-align: center;
+}
+
+img {
+  display: block;
+  height: auto;
+  width: 100%;
 }
 
 input {
