@@ -23,6 +23,7 @@ article {
   align-items: center;
   background-color: var(--accent-color-two);
   border: 0.2rem var(--accent-color-three) solid;
+  box-shadow: 1rem 1rem 0.4rem var(--accent-color-four);
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
@@ -53,6 +54,12 @@ button {
   color: var(--text-color);
   font-size: 1.3rem;
   padding: 0.2rem;
+  transition: all 0.15s ease-in-out;
+
+  &:hover {
+    background-color: var(--accent-color-four);
+    color: var(--accent-color);
+  }
 } 
 
 circle {
