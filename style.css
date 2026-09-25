@@ -6,11 +6,11 @@
 }
 
 :root {
-  --palette-color-one: #c9cba3;
-  --palette-color-two: #ffe1a8;
-  --palette-color-three: #e26d5c;
-  --palette-color-four: #723d46;
-  --palette-color-five: #472d30;
+  --palette-color-one: #b38a58;
+  --palette-color-two: #6f723f;
+  --palette-color-three: #3c5233;
+  --palette-color-four: #264027;
+  --palette-color-five: #0d1f22;
 
   --accent-color: var(--palette-color-one);
   --accent-color-two: var(--palette-color-two);
@@ -23,7 +23,7 @@ article {
   align-items: center;
   background-color: var(--accent-color-two);
   border: 0.2rem var(--accent-color-three) solid;
-  box-shadow: 1rem 1rem 0.4rem var(--accent-color-four);
+  box-shadow: 0.3rem 0.3rem 0.5rem var(--accent-color-four);
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
