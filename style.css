@@ -50,7 +50,10 @@ body {
 button {
   background-color: var(--accent-color-two);
   border-color: var(--accent-color-three);
-  border-radius: 0.5rem;
+  border-radius: 1rem;
+  border-style: solid;
+  border-width: 0.2rem;
+  box-shadow: 0.2rem 0.2rem var(--accent-color-three);
   color: var(--text-color);
   font-size: 1.3rem;
   padding: 0.2rem;

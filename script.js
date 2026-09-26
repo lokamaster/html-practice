@@ -1,11 +1,13 @@
 /* Dark mode logic. */
+"use strict";
+
 const setupDarkMode = () => {
   const darkModeButton = document.getElementById("dark-mode-button");
   if (!darkModeButton) return;
   darkModeButton.addEventListener('click', () => {
     document.documentElement.classList.toggle("dark-mode");
   });
-}
+};
 
 /* Slider logic. */
 const setupSlider = () => {
@@ -26,7 +28,7 @@ const setupSlider = () => {
     circle.setAttribute("cx", newPoint.x);
     circle.setAttribute("cy", newPoint.y);
   });
-}
+};
 
 /* Primality check logic. */
 const isPrime = n => {
@@ -44,7 +46,7 @@ const isPrime = n => {
     k += 6;
   }
   return true;
-}
+};
 
 const setupPrimeField = () => {
   const primeOutput = document.getElementById("prime-result");
@@ -55,14 +57,14 @@ const setupPrimeField = () => {
     const prime = isPrime(n) ? " is " : " is not ";
     primeOutput.textContent = n + prime + "prime";
   });
-}
+};
 
 /* Stopwatch logic. */
 const formatTime =  (s) => {
   const min = String(Math.floor(s / 60)).padStart(2, '0');
   const sec = String(s % 60).padStart(2, '0');
   return `${min}:${sec}`
-}
+};
 
 const setupStopwatch = () => {
   const stopwatchTimer = document.getElementById("stopwatch-timer");
@@ -79,25 +81,40 @@ const setupStopwatch = () => {
       seconds += 1;
       stopwatchTimer.textContent = formatTime(seconds);
     }, 1000);
-  }
+  };
 
   const stop = () => {
     stopwatchButton.textContent = "Start";
     clearInterval(intervalId);
     seconds = 0;
-  }
+  };
 
   stopwatchButton.addEventListener("click", () => {
     running ? stop() : start();
     running = !running;
   });
-}
+};
+
+/* Current time */
+const setupCurrentTime = () => {
+  const dateOutput = document.getElementById("current-time");
+  const updateTime = () => {
+    const date = new Date();
+    const hour = String(date.getHours()).padStart(2, "0");
+    const min = String(date.getMinutes()).padStart(2, "0");
+    const sec = String(date.getSeconds()).padStart(2, "0");
+    dateOutput.textContent = `${hour}:${min}:${sec}`;
+  };
+  updateTime();
+  setInterval(updateTime, 1000);
+};
 
 const init = () => {
   setupDarkMode();
   setupSlider();
   setupPrimeField();
   setupStopwatch();
-}
+  setupCurrentTime();
+};
 
 document.addEventListener("DOMContentLoaded", init);
